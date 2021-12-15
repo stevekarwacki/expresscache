@@ -56,7 +56,12 @@ function getCachedValue(cacheKey) {
 }
 
 function setFileCachedValue(cacheKey, value) {
-    const cacheFilePath = cacheStorage.loc + cacheKey;
+    const cacheDirectory = cacheStorage.loc;
+    const cacheFilePath = cacheDirectory + cacheKey;
+
+    if (!fs.existsSync(cacheDirectory)) {
+        fs.mkdirSync(cacheDirectory, { recursive: true });
+    }
 
     fs.writeFile(cacheFilePath, value, function(err) {
         if (err) throw err;
