@@ -1,0 +1,2 @@
+<h2><%= it.title %></h2>
+<p>I am a partial</p>

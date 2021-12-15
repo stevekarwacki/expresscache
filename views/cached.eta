@@ -1,0 +1,4 @@
+<% layout('./layout') %>
+
+<h1>Cached</h1>
+<p>This is cached</p>

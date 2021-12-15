@@ -1,0 +1,6 @@
+{
+    "cacheStorage": {
+        "type": "file",
+        "loc": "storage/cache/"
+    }
+}
