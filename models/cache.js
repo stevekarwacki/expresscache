@@ -5,25 +5,9 @@ const appConfig = require('../app.json');
 
 const cacheStorage = appConfig.cacheStorage;
 
-function getFileCacheKey(key) {
+function getCacheKey(key) {
     const crypto = require('crypto');
     const cacheKey = crypto.createHash('md5').update(key).digest('hex');
-
-    return cacheKey;
-}
-
-function getCacheKey(key) {
-    let cacheKey;
-
-    switch(cacheStorage.type) {
-        case 'file':
-            cacheKey = getFileCacheKey(key);
-            break;
-        case 'db':
-            break;
-        case 'default':
-            break;
-    }
 
     return cacheKey;
 }
